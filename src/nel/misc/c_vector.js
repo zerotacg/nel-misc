@@ -1,20 +1,10 @@
-import { float } from "nel/io/read_stream";
+import AModel from "nel/io/a_model";
+import { float } from "nel/io/types";
 
 /**
  * @class nlmisc.CVector
  */
-export default class CVector {
-    static readFrom( stream ) {
-        return stream.readModel(CVector);
-    }
-
-    static create( data ) {
-        return new CVector(data);
-    }
-
-    constructor( config ) {
-        Object.assign(this, config);
-    }
+export default class CVector extends AModel {
 }
 
 CVector.fields = [

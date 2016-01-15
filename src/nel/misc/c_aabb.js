@@ -1,3 +1,4 @@
+import AModel from "nel/io/a_model";
 import { CheckVersion } from "nel/io/read_stream";
 import CVector from "nel/misc/c_vector";
 
@@ -6,18 +7,7 @@ const VERSION = 0;
 /**
  * @class nlmisc.CAABB
  */
-export default class CAABB {
-    static readFrom( stream ) {
-        return stream.readModel(CAABB);
-    }
-
-    static create( data ) {
-        return new CAABB(data);
-    }
-
-    constructor( config ) {
-        Object.assign(this, config);
-    }
+export default class CAABB extends AModel {
 }
 
 CAABB.fields = [

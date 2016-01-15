@@ -1,16 +1,11 @@
+import AModel from "nel/io/a_model";
+
 /**
  * @class nlmisc.CVector<T>
  */
-export default class CVector {
+export default class CVector extends AModel {
     static template( type ) {
         class CVectorType extends CVector {
-            static readFrom( stream ) {
-                return stream.readModel(CVectorType);
-            }
-
-            static create( data ) {
-                return new CVectorType(data);
-            }
         }
 
         CVectorType.fields = [
@@ -20,9 +15,5 @@ export default class CVector {
         ];
 
         return CVectorType;
-    }
-
-    constructor( config ) {
-        Object.assign(this, config);
     }
 }
